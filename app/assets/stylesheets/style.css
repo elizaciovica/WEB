@@ -1,0 +1,73 @@
+html,
+/* Header */
+.main-header {
+	display: flex;
+	flex-direction: column;
+	align-content: space-around;
+}
+
+/* Header -> Logo */
+.nav-logo {
+	display: flex;
+	justify-content: flex-start;
+}
+
+.logo {
+	width: 180px;
+	height: 180px;
+}
+
+/* Header -> Nav */
+.main-nav {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	align-items: center;
+	flex-wrap: wrap;
+	background-color: var(--main-nav-color);
+}
+
+.main-nav ul {
+	display: flex;
+	order: 1;
+	width: 100%;
+	justify-content: center;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+.main-nav ul li {
+	margin-left: 10px;
+	margin-right: 10px;
+}
+
+.main-nav ul li a {
+	color: var(--main-text-color-over-pictures);
+	text-transform: uppercase;
+	text-decoration: none;
+	font-weight: bold;
+	font-size: 1.5rem;
+	text-shadow: 2px 2px var(--main-shadow-color-over-pictures);
+}
+
+/* Header -> Cover Photo with Motto */
+.cover {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	height: 700px;
+	background-image: url(cover.jpg);
+	background-size: cover;
+}
+
+.cover .motto {
+	width: 100%;
+	color: var(--main-text-color-over-pictures);
+	text-transform: uppercase;
+	text-decoration: none;
+	font-weight: bold;
+	font-size: 3rem;
+	text-shadow: 5px 5px var(--main-shadow-color-over-pictures);
+	text-align: center;
+}
