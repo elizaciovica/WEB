@@ -4,7 +4,7 @@ class CreateOffers < ActiveRecord::Migration[6.1]
       t.string :name
       t.string :description
       t.float :price
-      t.blob :image
+     # t.blob :image
 
       t.timestamps
     end
