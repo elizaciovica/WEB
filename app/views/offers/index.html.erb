@@ -10,12 +10,14 @@
         </ul>
     </nav>
     <figure class="cover">
-        <h1 class="motto">Your Journey Beginns with Us</h1>
-    </figure>
+        <h1 class="motto">If not Now, When?</h1>
+       <h2 class="sub">“Man cannot discover new oceans unless he has the courage to lose sight of the shore”</h2>
+    
+    </figure class="cover">
 </header>
 <br><br>
 
-<!--<main class="main-content">
+<main class="main-content">
     <h2>Check our Offers</h2>
     <section class="main-offers">
         <figure class="offer-container">
@@ -25,11 +27,11 @@
                 <%= image_tag(offer.image.variant(resize: "100x100")) %>
                 <div class="offer-container-box">
                     <div class="offer-box-column">
-                        <strong>offer.name</strong>
+                        <strong><%=offer.name%></strong>
                     </div>
                     <div class="offer-box-column">
-                        <strong>offer.description</strong>
-                        <strong>$ offer.price / night</strong>
+                        <strong><%=offer.description%></strong>
+                        <strong>$<%= offer.price%> / night</strong>
                     </div>
                 </div>
                  </tr>
@@ -38,7 +40,7 @@
         </figure>
          </section>
 </main>
--->
+
  <footer class="footer">
   <nav class="footer-nav">
         <ul>
