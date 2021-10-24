@@ -15,30 +15,30 @@
     
     </figure class="cover">
 </header>
-<br><br>
 
 <main class="main-content">
     <h2>Check our Offers</h2>
     <section class="main-offers">
-        <figure class="offer-container">
-            <a href="offer.html">
-            <% @offers.each do |offer| %>
-      <tr>
-                <%= image_tag(offer.image.variant(resize: "100x100")) %>
-                <div class="offer-container-box">
-                    <div class="offer-box-column">
-                        <strong><%=offer.name%></strong>
-                    </div>
-                    <div class="offer-box-column">
-                        <strong><%=offer.description%></strong>
-                        <strong>$<%= offer.price%> / night</strong>
-                    </div>
-                </div>
-                 </tr>
-    <% end %>
-            </a>
-        </figure>
-         </section>
+        <% @offers.each do |offer| %>
+          <figure class="offer-container">
+              <%= link_to offer do %>
+                  <% if offer.image.attached? %>
+                    <td><%= image_tag offer.image, class: "offers-photo" %></td>
+                  <% end %>
+                  <div class="offer-container-box">
+                      <div class="offer-box-column">
+                    
+                          <strong><%= offer.name%></strong>
+                      </div>
+                      <div class="offer-box-column">
+                          <strong><%= offer.description%></strong>
+                          <strong>$ <%= offer.price%> / night</strong>
+                      </div>
+                  </div>
+              <% end %>
+          </figure>
+        <% end %>
+    </section>
 </main>
 
  <footer class="footer">

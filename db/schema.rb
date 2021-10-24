@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_10_08_162248) do
+ActiveRecord::Schema.define(version: 2021_10_24_121158) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -49,6 +49,15 @@ ActiveRecord::Schema.define(version: 2021_10_08_162248) do
     t.float "price"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "location"
+    t.string "phone"
+    t.string "meals"
+    t.string "host"
+    t.integer "stars"
+    t.integer "rating"
+    t.integer "cleanliness"
+    t.integer "atmosphere"
+    t.integer "food"
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
