@@ -1,0 +1,85 @@
+<header class="main-header">
+    <nav class="main-nav">
+        <figure class="nav-logo">
+            <a href="#"><%= image_tag("logo2.png", class: "logo inver-color", alt: "logo-image-small") %></a>
+        </figure>
+        <ul>
+            <li><%= link_to root_path do %>Home<% end %></li>
+            <li><a>|</a></li>
+            <li><%= link_to contact_path do %>Contact<% end %></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+    <section class="contact">
+        <div class="content">
+            <h2>Contact US</h2>
+            <p>If you have any questions, we are open for many suggestions or just to have a chat.</p>
+        </div>
+        <div class="container">
+            <div class="contact-info">
+                <div class="box">
+                    <div class="icon"><a href="#"><%= image_tag("location.png", alt: "facebook-logo", width: "50", height: "40")%></a></div>
+                    <div class="text">
+                        <h3>Address</h3>
+                        <p>Dorm 9C,<br>Student Alley,<br>Timisoara, Romania</p>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="icon"><a href="#"><%= image_tag("phone.png", alt: "facebook-logo", width: "50", height: "50")%></a></div>
+                    <div class="text">
+                        <h3>Phone</h3>
+                        <p>+4072134567</p>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="icon"><a href="#"><%= image_tag("mail.png", alt: "facebook-logo", width: "50", height: "50")%></a></div>
+                    <div class="text">
+                        <h3>Email</h3>
+                        <p>tourism_contact@gmail.com</p>
+                    </div>
+                </div>
+            </div>
+            <div class="mapping"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2784.0605533186176!2d21.23823531536105!3d45.74993197910532!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47455d8860cf92c9%3A0xdb3521f21f643d9e!2sParcare%2C%20Aleea%20Studen%C8%9Bilor%209%2C%20Timi%C8%99oara!5e0!3m2!1sen!2sro!4v1635181152419!5m2!1sen!2sro"
+             width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe></div>
+            <div class ="contactForm">
+                <form>
+                    <h2>Send us a message</h2>
+                    <div class="inputBox">
+                        <input type="text" name="" required="required">
+                        <span>Name</span>
+                    </div>
+                    <div class="inputBox">
+                        <input type="text" name="" required="required">
+                        <span>Email</span>
+                    </div>
+                    <div class="inputBox">
+                        <textarea required="required"></textarea>
+                        <span>Type your message here.</span>
+                    </div>
+                    <div class="inputBox">
+                        <input type="submit" name="" value="Send">
+                    </div>
+                </form>
+            </div>
+        
+        </div>    
+
+    </section>
+
+
+</main>
+
+ <footer class="footer">
+  <nav class="footer-nav">
+        <ul>
+            <li><a href="#"><%= image_tag("fb.png", alt: "facebook-logo", width: "50", height: "50")%></a></li>
+            <li><a href="#"><%= image_tag("insta.png", alt: "instagram-logo", width: "50", height: "50")%></a></li>
+            <li><a href="#"><%= image_tag("twitter.png", alt: "twitter-logo", width: "50", height: "50")%></a></li>
+            <li><a href="#"><%= image_tag("wapp.png", alt: "wapp-logo", width: "50", height: "50")%></a></li>
+            <li id="copyright">Copyright @2021</li>
+        </ul>
+    </nav>
+           
+ </footer>

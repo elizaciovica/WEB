@@ -4,9 +4,9 @@
             <a href="#"><%= image_tag("logo2.png", class: "logo inver-color", alt: "logo-image-small") %></a>
         </figure>
         <ul>
-            <li><a href="offers">Home</a></li>
+            <li><%= link_to root_path do %>Home<% end %></li>
             <li><a>|</a></li>
-            <li><a href="contact.html">Contact</a></li>
+            <li><%= link_to contact_path do %>Contact<% end %></li>
         </ul>
     </nav>
     <figure class="cover">
@@ -26,12 +26,9 @@
                     <td><%= image_tag offer.image, class: "offers-photo" %></td>
                   <% end %>
                   <div class="offer-container-box">
+                  
                       <div class="offer-box-column">
-                    
-                          <strong><%= offer.name%></strong>
-                      </div>
-                      <div class="offer-box-column">
-                          <strong><%= offer.description%></strong>
+                          <strong><%= offer.location%></strong>
                           <strong>$ <%= offer.price%> / night</strong>
                       </div>
                   </div>
@@ -66,7 +63,7 @@
   <thead> 
     <tr>
       <th>Name</th>
-      <th>Description</th>
+      <th>Location</th>
       <th>Price</th>
       <th>Image</th>
       <th colspan="1"></th>
@@ -77,7 +74,7 @@
     <% @offers.each do |offer| %>
       <tr>
         <td><%= offer.name %></td>
-        <td><%= offer.description %></td>
+        <td><%= offer.location %></td>
         <td><%= offer.price %></td>
         <td><%= image_tag(offer.image.variant(resize: "100x100")) %></td>
         <td><%= link_to 'Show', offer %></td>

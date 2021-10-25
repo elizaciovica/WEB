@@ -11,3 +11,4 @@ class AddColumnsToOffers < ActiveRecord::Migration[6.1]
     add_column :offers, :food, :integer
   end
 end
+  
