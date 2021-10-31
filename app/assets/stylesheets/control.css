@@ -47,7 +47,9 @@
     justify-content: center;
     align-items: center;
     margin-top: 30px;
+    margin-left: 20px;
 }
+
 
 .contact .contact-info {
     width: 50%;
@@ -59,7 +61,7 @@
     position: relative;
     padding: 20px 0;
     display: flex;
-    margin-right: none;
+    margin-right: 50px;
     margin-left: 40px;
 }
 
@@ -90,10 +92,12 @@
 }
 
 .contactForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     width: 100%;
     padding: 40px;
     background: rgb(206, 102, 42);
-
 }
 
 .contactForm h2 {
@@ -158,7 +162,26 @@
 }
 
 .mapping {
-    margin-right: 180px;
+    margin-right: 130px;
     margin-left: 20px;
 }
 
+#horizontal-line {
+    width: 100%;
+    margin-top: 20px;
+    border-width: 3px;
+}
+
+@media(max-width: 991px) {
+    .contact {
+        padding: 50px;
+    }
+
+    .container {
+        flex-direction: column;
+    }
+
+    .container .contact-info {
+        margin-bottom: 40px;
+    }
+}
