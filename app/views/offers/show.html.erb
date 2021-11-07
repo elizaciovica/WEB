@@ -1,69 +1,289 @@
-<p id="notice"><%= notice %></p>
+<header class="main-header">
+    <nav class="main-nav">
+        <figure class="nav-logo">
+            <a href="#"><%= image_tag("logo2.png", class: "logo inver-color", alt: "logo-image-small") %></a>
+        </figure>
+        <ul>
+            <li><%= link_to root_path do %>Home<% end %></li>
+            <li><a>|</a></li>
+            <li><%= link_to contact_path do %>Contact<% end %></li>
+        </ul>
+    </nav>
+</header>
 
-<p>
-  <strong>Name:</strong>
-  <%= @offer.name %>
-</p>
+<main class="main-content">
+  <hr id="horizontal-line">
+  <section class="page-up">
 
-<p>
-  <strong>Description:</strong>
-  <%= @offer.description %>
-</p>
+  <section class="page">
+    <section class="line">
+      <strong> <%= @offer.location %> </strong>
+    </section>
+    <section class="resort">
+      <h2> <%= @offer.name %> </h2>
+      <section class="stars">
+        <% for i in 1..5 do %>
+          <% if i <= @offer.stars %>
+            &#9733;
+          <% else %>
+            &#9734;
+          <% end%>
+        <% end %>
+      </section>
 
-<p>
-  <strong>Price:</strong>
-  <%= @offer.price %>
-</p>
+      <section class="features">
+        <div class="progress" data-label="Overall Rating">
+          <span class="value" style="width:85%;"></span>
+        </div>
+        <div class="progress" data-label="Cleanliness">
+          <span class="value" style="width:100%;"></span>
+        </div>
+        <div class="progress" data-label="Food">
+          <span class="value" style="width:75%;"></span>
+        </div>
+        <div class="progress" data-label="Atmoshpere">
+          <span class="value" style="width:92%;"></span>
+        </div>
+        <section class="description">
+        <p>
+          <%= @offer.description%>
+        </p>
+        </section>
 
-<p>
-  <strong>Location:</strong>
-  <%= @offer.location %>
-</p>
+      </section>
+      <section class="details">
+      <section class="price">
+        <h2>$ <%= @offer.price%> / night</h2>
+      </section>
+      <section class="host-details">
+        <section class="details-item">
+          <%= image_tag("host.png", alt: "food-logo", width: 50, height: 50)%>
+          <div class="details-item-text">
+            <h3>Your host</h3>
+            <h3><%= @offer.host%></h3>
+          </div>
+        </section>
+          <section class="details-item">
+          <%= image_tag("food.png", alt: "food-logo", width: 50, height: 50)%>
+          <div class="details-item-text">
+            <h3>Meal</h3>
+            <h3><%= @offer.meals%></h3>
+            </section>
 
-<p>
-  <strong>Phone_Number:</strong>
-  <%= @offer.phone %>
-</p>
+    </section>
+  </section>
+  </section>
 
-<p>
-  <strong>Meals_Available:</strong>
-  <%= @offer.meals %>
-</p>
+<hr id="horizontal-line">
+  <section class="buttons">
+    <section class="button-back">
+      <li><%= link_to root_path do %>
+        <%= image_tag("arrow.png", alt: "arrow-logo", width: 40, height: 40, class: "rotate180")%>
+          <h3>Back to Resort Listing</h3>
+      <% end %></li>
+    </section>
+    <section class="button-book">
+      <a href="#anchor">
+        <h3>Book a Room</h3>
+        <%= image_tag("arrow.png", alt: "arrow-logo", width: 40, height: 40, class: "rotate90")%>
+      </a>
+    </section>
+  </section>
+  </section>
+  <section class="buttons" id="anchor">
+    <section class="displaynone">
+      <a href="#anchorUp">
+        <%= image_tag("arrow.png", alt: "arrow-logo", width: 40, height: 40, class: "rotate90")%>
+        <h3>Back to Resort</h3>
+      </a>
+    </section>
+  </section>
+  </section>
 
-<p>
-  <strong>Host_name:</strong>
-  <%= @offer.host %>
-</p>
 
-<p>
-  <strong>Stars:</strong>
-  <%= @offer.stars %>
-</p>
+  <section class="page-down">
+    <section class="line">
+      <strong>Booking</strong>
+    </section>
+    <section class="resort">
+      <h3>Book your room at</h3>
+      <h2><%= @offer.name %></h2>
+      <section class="stars">
+        <% for i in 1..5 do %>
+          <% if i <= @offer.stars %>
+            &#9733;
+          <% else %>
+            &#9734;
+          <% end%>
+        <% end %>
+      </section>
 
-<p>
-  <strong>Rating:</strong>
-  <%= @offer.rating %>
-</p>
+       <section class="main-content-form">
+        <form name="contactForm">
+          <div class="form-group">
+            <label for="checkIn">Check In</label>
+            <input
+              id="checkIn"
+              class="form-control"
+              type="date"
+              name="checkIn"
+              onchange="handler1(event);"
+              required
+            />
+          </div>
 
-<p>
-  <strong>Cleanliness:</strong>
-  <%= @offer.cleanliness %>
-</p>
+          <div class="form-group">
+            <label for="checkOut">Check Out</label>
+            <input
+              id="checkOut"
+              class="form-control"
+              type="date"
+              name="checkOut"
+              onchange="handler2(event);"
+              required
+            />
+          </div>
 
-<p>
-  <strong>Atmoshpere:</strong>
-  <%= @offer.atmosphere %>
-</p>
+          <div class="form-group">
+            <label for="firstName">First Name</label>
+            <input
+              id="firstName"
+              class="form-control"
+              type="text"
+              name="firstName"
+              placeholder="Jon"
+              required
+            />
+          </div>
 
-<p>
-  <strong>Food:</strong>
-  <%= @offer.food %>
-</p>
+          <div class="form-group">
+            <label for="lastName">Last Name</label>
+            <input
+              id="lastName"
+              class="form-control"
+              type="text"
+              name="lastName"
+              placeholder="Doe"
+              required
+            />
+          </div>
 
-<p>
-  <strong>Image:</strong>
-  <%= @offer.image %>
-</p>
+          <div class="form-group">
+            <label for="phone">Phone</label>
+            <input
+              id="phone"
+              class="form-control"
+              type="text"
+              name="phone"
+              placeholder="+40 731 660 186"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email address</label>
+            <input
+              name="email"
+              type="email"
+              class="form-control"
+              id="email"
+              placeholder="name@example.com"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="attendees">Scope</label>
+            <select class="form-control" id="attendees" name="attendees">
+              <option value="0">Not specified</option>
+              <option value="1">Business</option>
+              <option value="2">Leisure</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="message">Message (optional)</label>
+            <textarea
+              id="message"
+              class="form-control"
+              name="message"
+              placeholder="I want a room with a better view .."
+              rows="10"
+              cols="40"
+            ></textarea>
+          </div>
+
+          <div id="errorAlert" class="error"></div>
+
+          <div class="form-group">
+            <button type="button" class="btn btn-primary">
+              Submit
+            </button>
+          </div>
+        </form>
+
+        <div id="successMessage" class="success hidden">
+          Booking request successfully sent!
+        </div>
+      </section>
+  </section>
+  <section class="details">
+      <section class="price" id="total-price">
+        <p>$ <strong id="trip-price"></strong> / trip</p>
+        <p><strong id="nights"></strong> nights</p>
+      </section>
+      <section class="host-details">
+        <section class="details-item">
+          <%= image_tag("host.png", alt: "host", width: 50, height: 50)%>
+          <div class="details-item-text">
+            <h3>Your host</h3>
+            <h3><%= @offer.host%></h3>
+          </div>
+        </section>
+        <section class="details-item">
+          <%= image_tag("food.png", alt: "food-logo", width: 50, height: 50)%>
+          <div class="details-item-text">
+            <h3>Meals</h3>
+            <h3><%= @offer.meals%></h3>
+          </div>
+        </section>
+      </section>
+    </section>
+  </section>
+
+  <section class="buttons" id="button-hidden">
+    <section class="button-back-resort">
+      <a href="#anchorUp">
+        <%= image_tag("arrow.png", alt: "icon-arrow", width: 40, height: 40, class: "rotate180")%>
+        <h3>Back to Resort</h3>
+      </a>
+    </section>
+  </section>
+  
+   <section class="contact-us">
+   <hr id="horizontal-line">
+            <h2>Contact Us</h2>
+            <section class="contact-item">
+                <div class="icon"><a href="#"><%= image_tag("phone.png", alt: "facebook-logo", width: "50", height: "50")%></a></div>
+                <a href="tel:+123456789012"><%= @offer.phone %></a>
+            </section>
+        </section>
+
+</main>
+
+<footer class="footer">
+  <nav class="footer-nav">
+        <ul>
+            <li><a href="#"><%= image_tag("fb.png", alt: "facebook-logo", width: "50", height: "50")%></a></li>
+            <li><a href="#"><%= image_tag("insta.png", alt: "instagram-logo", width: "50", height: "50")%></a></li>
+            <li><a href="#"><%= image_tag("twitter.png", alt: "twitter-logo", width: "50", height: "50")%></a></li>
+            <li><a href="#"><%= image_tag("wapp.png", alt: "wapp-logo", width: "50", height: "50")%></a></li>
+            <li id="copyright">Copyright @2021</li>
+        </ul>
+    </nav>
+           
+ </footer>
+
 
 <%= link_to 'Edit', edit_offer_path(@offer) %> |
 <%= link_to 'Back', root_path %>
