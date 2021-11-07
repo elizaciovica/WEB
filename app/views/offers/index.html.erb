@@ -1,90 +1,95 @@
 <header class="main-header">
-    <nav class="main-nav">
-        <figure class="nav-logo">
-            <a href="#"><%= image_tag("logo2.png", class: "logo inver-color", alt: "logo-image-small") %></a>
-        </figure>
-        <ul>
-            <li><%= link_to root_path do %>Home<% end %></li>
-            <li><a>|</a></li>
-            <li><%= link_to contact_path do %>Contact<% end %></li>
-        </ul>
-    </nav>
-    <figure class="cover">
-        <h1 class="motto">If not Now, When?</h1>
-       <h2 class="sub">“Man cannot discover new oceans unless he has the courage to lose sight of the shore”</h2>
-    
-    </figure class="cover">
+  <nav class="main-nav">
+    <figure class="nav-logo">
+      <a href="#"><%= image_tag("logo2.png", class: "logo inver-color", alt: "logo-image-small") %></a>
+    </figure>
+    <ul>
+      <li><%= link_to root_path do %>Home<% end %></li>
+      <li><a>|</a></li>
+      <li><%= link_to contact_path do %>Contact<% end %></li>
+      <% if current_user %>
+        <li><a>|</a></li>
+        <li><%= link_to destroy_user_session_path, method: :delete do %>Logout<% end %></li>
+      <% else %>
+        <li><a>|</a></li>
+        <li><%= link_to new_user_session_path do %>Login<% end %></li>
+      <% end %>
+    </ul>
+  </nav>
+  <figure class="cover">
+      <h1 class="motto">If not Now, When?</h1>
+      <h2 class="sub">“Man cannot discover new oceans unless he has the courage to lose sight of the shore”</h2>
+  </figure class="cover">
 </header>
 
 <main class="main-content">
-    <h2>Check our Offers</h2>
-    <section class="main-offers">
-        <% @offers.each do |offer| %>
-          <figure class="offer-container">
-              <%= link_to offer do %>
-                  <% if offer.image.attached? %>
-                    <td><%= image_tag offer.image, class: "offers-photo" %></td>
-                  <% end %>
-                  <div class="offer-container-box">
-                  
-                      <div class="offer-box-column">
-                          <strong><%= offer.location%></strong>
-                          <strong>$ <%= offer.price%> / night</strong>
-                      </div>
-                  </div>
-              <% end %>
-          </figure>
+  <h2>Check our Offers</h2>
+  <section class="main-offers">
+    <% @offers.each do |offer| %>
+      <figure class="offer-container">
+        <%= link_to offer do %>
+          <% if offer.image.attached? %>
+            <td><%= image_tag offer.image, class: "offers-photo" %></td>
+          <% end %>
+          <div class="offer-container-box">   
+            <div class="offer-box-column">
+              <strong><%= offer.location%></strong>
+              <strong>$ <%= offer.price%> / night</strong>
+            </div>
+          </div>
         <% end %>
-    </section>
+      </figure>
+    <% end %>
+  </section>
 </main>
 
- <footer class="footer">
+<footer class="footer">
   <nav class="footer-nav">
-        <ul>
-            <li><a href="#"><%= image_tag("fb.png", alt: "facebook-logo", width: "50", height: "50")%></a></li>
-            <li><a href="#"><%= image_tag("insta.png", alt: "instagram-logo", width: "50", height: "50")%></a></li>
-            <li><a href="#"><%= image_tag("twitter.png", alt: "twitter-logo", width: "50", height: "50")%></a></li>
-            <li><a href="#"><%= image_tag("wapp.png", alt: "wapp-logo", width: "50", height: "50")%></a></li>
-            <li id="copyright">Copyright @2021</li>
-        </ul>
-    </nav>
-           
- </footer>
-    
+    <ul>
+      <li><a href="#"><%= image_tag("fb.png", alt: "facebook-logo", width: "50", height: "50")%></a></li>
+      <li><a href="#"><%= image_tag("insta.png", alt: "instagram-logo", width: "50", height: "50")%></a></li>
+      <li><a href="#"><%= image_tag("twitter.png", alt: "twitter-logo", width: "50", height: "50")%></a></li>
+      <li><a href="#"><%= image_tag("wapp.png", alt: "wapp-logo", width: "50", height: "50")%></a></li>
+      <li id="copyright">Copyright @2021</li>
+    </ul>
+  </nav>       
+</footer>
 
-<br><br><br><br><br>
-<p id="notice"><%= notice %></p>
+<% if current_user %>
+  <br><br><br><br><br>
+  <p id="notice"><%= notice %></p>
 
+  <h1>Offers</h1>
+  <br><br>
 
-<h1>Offers</h1>
-<br><br>
-
-<table>
-  <thead> 
-    <tr>
-      <th>Name</th>
-      <th>Location</th>
-      <th>Price</th>
-      <th>Image</th>
-      <th colspan="1"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @offers.each do |offer| %>
+  <table>
+    <thead> 
       <tr>
-        <td><%= offer.name %></td>
-        <td><%= offer.location %></td>
-        <td><%= offer.price %></td>
-        <td><%= image_tag(offer.image.variant(resize: "100x100")) %></td>
-        <td><%= link_to 'Show', offer %></td>
-        <td><%= link_to 'Edit', edit_offer_path(offer) %></td>
-        <td><%= link_to 'Destroy', offer, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <th>Name</th>
+        <th>Location</th>
+        <th>Price</th>
+        <th>Image</th>
+        <th colspan="1"></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
 
-<br>
+    <tbody>
+      <% @offers.each do |offer| %>
+        <tr>
+          <td><%= offer.name %></td>
+          <td><%= offer.location %></td>
+          <td><%= offer.price %></td>
+          <td><%= image_tag(offer.image.variant(resize: "100x100")) %></td>
+          <td><%= link_to 'Show', offer %></td>
+          <td><%= link_to 'Edit', edit_offer_path(offer) %></td>
+          <td><%= link_to 'Destroy', offer, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 
-<%= link_to 'New Offer', new_offer_path %>
+  <br>
+
+  <%= link_to 'New Offer', new_offer_path %>
+
+<% end %>

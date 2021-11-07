@@ -4,7 +4,6 @@
     padding: 0;
     box-sizing: border-box;
     font-family: sans-serif;
-    
 }
 
 .contact {
@@ -16,7 +15,6 @@
     align-items: center;
     flex-direction: column;
     background-color: rgb(238, 188, 142);
-
 }
 
 .contact .content {
@@ -82,7 +80,6 @@
     color: #fff;
     flex-direction: column;
     font-weight: 300;
-
 }
 
 .contact .contact-info .box .text h3{
@@ -113,7 +110,6 @@
     margin-top: 10px;
 }
 
-.contactForm .inputBox input,
 .contactForm .inputBox input, textarea {
     width: 100%;
     padding: 5px 0;
@@ -124,6 +120,7 @@
     outline: none;
     resize: none;
 }
+
 .contactForm .inputBox textarea {
     padding: 20px 0;
 

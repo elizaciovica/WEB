@@ -124,9 +124,8 @@ body {
 	text-shadow: 5px 5px var(--main-shadow-color-over-pictures);
 	text-align: center;
 	font-family: "Courier New";
-
-
 }
+
 /* Main */
 .main-content {
     display: flex;
@@ -149,6 +148,7 @@ body {
 	flex-direction: column;
 	flex-wrap: wrap;
 	width: 100%;
+	margin-bottom: 50px;
 }
 
 .main-offers figure {
@@ -185,7 +185,6 @@ body {
 	justify-content: space-around;
 	align-items: center;
 	text-align: center;
-	
 }
 
 .offer-box-column {
@@ -194,7 +193,6 @@ body {
 	flex-wrap: nowrap;
 	width: 50%;
 	margin-left: 15px;
-	
 }
 
 .offer-box-column strong {
