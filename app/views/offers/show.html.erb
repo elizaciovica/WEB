@@ -1,4 +1,4 @@
-<header class="main-header">
+<header class="main-header" id="anchorUp">
   <nav class="main-nav">
     <figure class="nav-logo">
       <a href="#"><%= image_tag("logo2.png", class: "logo inver-color", alt: "logo-image-small") %></a>
@@ -11,7 +11,7 @@
   </nav>
 </header>
 
-<main class="main-content">
+<main class="main-content-show">
   <hr id="horizontal-line">
 
   <section class="page-up">
@@ -33,16 +33,16 @@
 
       <section class="features">
         <div class="progress" data-label="Overall Rating">
-          <span class="value" style="width:85%;"></span>
+          <span class="value" style="width:<%= @offer.get_rating(@offer) %>%;"></span>
         </div>
         <div class="progress" data-label="Cleanliness">
-          <span class="value" style="width:100%;"></span>
+          <span class="value" style="width:<%= @offer.cleanliness %>%;"></span>
         </div>
         <div class="progress" data-label="Food">
-          <span class="value" style="width:75%;"></span>
+          <span class="value" style="width:<%= @offer.food %>%;"></span>
         </div>
         <div class="progress" data-label="Atmoshpere">
-          <span class="value" style="width:92%;"></span>
+          <span class="value" style="width:<%= @offer.atmosphere %>%;"></span>
         </div>
         <section class="description">
         <p>
@@ -54,18 +54,18 @@
       
       <section class="details">
         <section class="price">
-          <h2>$ <%= @offer.price%> / night</h2>
+          <h2>$ <p id="offer-price"><%= @offer.price %><p> / night</h2>
         </section>
         <section class="host-details">
           <section class="details-item">
-            <%= image_tag("host.png", alt: "food-logo", width: 50, height: 50)%>
+            <%= image_tag("host.png", alt: "host-logo", width: 50, height: 50)%>
             <div class="details-item-text">
               <h3>Your host</h3>
               <h3><%= @offer.host%></h3>
             </div>
           </section>
             <section class="details-item">
-              <%= image_tag("food.png", alt: "food-logo", width: 50, height: 50)%>
+              <%= image_tag("hot.png", alt: "food-logo", width: 50, height: 50)%>
               <div class="details-item-text">
                 <h3>Meal</h3>
                 <h3><%= @offer.meals%></h3>
@@ -74,16 +74,18 @@
           </section>
         </section>
       </section>
+     </section> 
 
       <hr id="horizontal-line">
 
       <section class="buttons">
         <section class="button-back">
-          <li><%= link_to root_path do %>
+            <%= link_to root_path do %>
             <%= image_tag("arrow.png", alt: "arrow-logo", width: 40, height: 40, class: "rotate180")%>
               <h3>Back to Resort Listing</h3>
-          <% end %></li>
+          <% end %>
         </section>
+         <hr id="horizontal-line">
         <section class="button-book">
           <a href="#anchor">
             <h3>Book a Room</h3>
@@ -93,14 +95,13 @@
       </section>
     </section>
     <section class="buttons" id="anchor">
-      <section class="displaynone">
+      <section class="button-back-resort displaynone">
        <a href="#anchorUp">
           <%= image_tag("arrow.png", alt: "arrow-logo", width: 40, height: 40, class: "rotate90")%>
          <h3>Back to Resort</h3>
         </a>
       </section>
     </section>
-  </section>
 
   <section class="page-down">
     <section class="line">
@@ -243,7 +244,7 @@
           </div>
         </section>
         <section class="details-item">
-          <%= image_tag("food.png", alt: "food-logo", width: 50, height: 50)%>
+          <%= image_tag("hot.png", alt: "food-logo", width: 50, height: 50)%>
           <div class="details-item-text">
             <h3>Meals</h3>
             <h3><%= @offer.meals%></h3>
@@ -262,12 +263,12 @@
     </section>
   </section>
   
-  <section class="contact-us">
+  <section class="contact-us-show">
     <hr id="horizontal-line">
     <h2>Contact Us</h2>
     <section class="contact-item">
       <div class="icon">
-        <a href="#"><%= image_tag("phone.png", alt: "facebook-logo", width: "50", height: "50")%></a>
+        <a href="#"><%= image_tag("call.png", alt: "call-logo", width: "50", height: "50")%></a>
       </div>
       <a href="tel:+123456789012"><%= @offer.phone %></a>
     </section>

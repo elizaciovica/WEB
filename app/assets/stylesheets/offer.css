@@ -6,6 +6,8 @@
 	-o-transform: rotate(90deg);
 	-ms-transform: rotate(90deg);
 	transform: rotate(90deg);
+	height: 50px;
+
 }
 
 .rotate270 {
@@ -14,6 +16,7 @@
 	-o-transform: rotate(270deg);
 	-ms-transform: rotate(270deg);
 	transform: rotate(270deg);
+	height: 50px;
 }
 
 .rotate180 {
@@ -22,8 +25,10 @@
 	-o-transform: rotate(180deg);
 	-ms-transform: rotate(180deg);
 	transform: rotate(180deg);
+	height: 50px;
+
 }
-.main-content, .page-up {
+.main-content-show, .page-up {
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
@@ -31,6 +36,15 @@
     align-items: center;
     width: 100%;
   }
+
+  .main-content-show h2 {
+	  color: #f2e9e4;
+	  font-size: 36px;
+    	font-weight: 500;
+    	margin-bottom: 20px;
+    	font-weight: bold;
+  }
+ 
  .page-up {
 	background-image: url("cover1.jpg");
  }
@@ -62,6 +76,11 @@
     min-height: 50px;
     width: 100%;
   }
+  .features {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+  }
   
   .line strong {
     text-align: center;
@@ -81,7 +100,7 @@
   .stars {
     align-self: center;
     font-size: 2rem;
-    color: rgb(216, 101, 24);
+    color: #834653;
   }
   .facilities {
     display: flex;
@@ -147,8 +166,11 @@
 
 .price {
 	font-size: 2rem;
-  text-shadow: 0.5px 1px var(--main-shadow-color);
+  	text-shadow: 0.5px 1px var(--main-shadow-color);
 	font-weight: 600;
+}
+.price h2 {
+	color: #e0afa08b;
 }
 
 .host-details {
@@ -173,6 +195,9 @@
 img {
     border-radius: 50%;
 }
+.icon img{
+	border-radius: 0%;
+}
 
 .details-item-text {
 	display: flex;
@@ -184,6 +209,7 @@ img {
 
 .details-item-text h3 {
 	margin-top: 3px;
+	color:white;
 }
 
 .buttons {
@@ -191,7 +217,7 @@ img {
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	width: 80%;
+	width: 60%;
 	margin-top: 20px;
 }
 
@@ -218,6 +244,10 @@ img {
 	width: 100%;
 }
 
+.page-down h3 {
+	color: #9e727a;
+}
+
 .button-back-resort {
 	display: flex;
 	flex-direction: column;
@@ -234,7 +264,7 @@ img {
 }
 
 .button-back-resort a {
-	color: orange;
+	color: #6d6875;
 }
 
 .buttons img {
@@ -310,8 +340,9 @@ textarea:focus {
 }
 
 .form-group label {
-	color: black;
+	color: #b56576;
 	font-size: 1.5rem;
+	font-weight: bold;
 	text-shadow: 0.5px 1px var(--main-shadow-color);
 	text-decoration: none;
 	margin-bottom: 5px;
@@ -363,8 +394,11 @@ button:hover {
 #total-price {
 	display: none;
 }
+.btn-primary {
+	background-color: #8a515d;
+}
 
-.contact-us {
+.contact-us-show {
     margin-top: 50px;
     display: flex;
 	flex-direction: column;
@@ -378,39 +412,41 @@ button:hover {
 	align-items: center;
 
 }
-.contact-us h2 {
+.contact-us-show h2 {
 	text-align: center;
 	font-size: 2rem;
 	text-transform: uppercase;
+	margin-top: 20px;
 }
 
-.contact-us a {
+.contact-us-show a {
     text-align: center;
 	margin: 10px auto;
 	font-size: 2rem;
 	text-transform: uppercase;
-    color:rgb(216, 101, 24);
+    color:#6d597a;
+	background-color: #e0afa0;
+	border-radius: 20%;
 }
 .error {
 	color: red;
   }
 
 @media screen and (min-width: 780px) {
-	.contact-us {
-		margin-top: 50px;
+	.contact-us-show {
 		align-items: center;
-		display: flex;
-		flex-direction: column;
 		justify-content: flex-start;
-	
-	}
-	.contact-us h2 {
-		margin-top: 20px;
+		margin-top: 50px;
+    	display: flex;
+		flex-direction: column;
+		width: 70%;
 		text-align: center;
-		margin: 20px auto;
-		font-size: 2rem;
-		text-transform: uppercase;
-	}
+		}
+
+	.contact-us-show h2 {
+		margin-top: 20px;
+		color: #6d597a;
+	}	
 
 	.host-details {
 		flex-direction: row;
@@ -419,7 +455,10 @@ button:hover {
 	.details-item {
 		align-items: center;
 		justify-content: center;
-
+		margin-left: 30px;
 	}
 	
 }
+	
+
+
