@@ -32,7 +32,7 @@
 
 .contact .content p {
     font-weight: bold;
-    color: #fff;
+    color: #e5989b;
     font-size: 15px;
 	text-align: center;
 	font-family: "Courier New";
@@ -69,7 +69,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    border-radius: 50%;
     margin-left: 20px;
 }
 
@@ -77,14 +76,14 @@
     display: flex;
     margin-left: 20px;
     font-size: 16px;
-    color: #fff;
+    color: #b5838d;
     flex-direction: column;
     font-weight: 300;
 }
 
 .contact .contact-info .box .text h3{
     font-weight: 500;
-    color: rgb(206, 102, 42);
+    color: #6d6875;
     font-weight: bold;
 }
 
@@ -94,12 +93,12 @@
     align-items: center;
     width: 100%;
     padding: 40px;
-    background: rgb(206, 102, 42);
+    background: #e5989b;
 }
 
 .contactForm h2 {
     font-size: 30px;
-    color: #d8ac8e;
+    color: #6d6875;
     font-weight: 500;
     font-weight: bold;
 }
@@ -134,7 +133,7 @@
     margin: 10px 0;
     pointer-events: none;
     transition: 0.5s;
-    color: rgb(182, 152, 118);
+    color: #fae1dd;
     font-weight: bold;
 }
 
@@ -142,20 +141,20 @@
 .contactForm .inputBox input:valid ~ span,
 .contactForm .inputBox textarea:focus ~ span, 
 .contactForm .inputBox textarea:valid ~ span  {
-    color: rgb(112, 56, 4);
+    color: #6d6875;
     font-size: 12px;
     transform: translateY(-20px);
 }
 
 .contactForm .inputBox input[type="submit"] {
     width: 100px;
-    background: #d8ac8e;
+    background: #6d6875;
     color: #fff;
     border: none;
     cursor: pointer;
     padding: 10px;
     font-size: 18px;
-
+    border-radius: 50%;
 }
 
 .mapping {
@@ -169,7 +168,7 @@
     border-width: 3px;
 }
 
-@media(max-width: 991px) {
+@media(max-width: 1200px) {
     .contact {
         padding: 50px;
     }
@@ -180,5 +179,8 @@
 
     .container .contact-info {
         margin-bottom: 40px;
+    }
+    .contactForm {
+        width: 50%;
     }
 }
