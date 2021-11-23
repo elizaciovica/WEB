@@ -364,7 +364,7 @@ textarea:focus {
 }
 
 button {
-  background-color: #333;
+  background-color: #8a515d;
   border: none;
   color: white;
   border-radius: 5px;
@@ -373,7 +373,8 @@ button {
   text-decoration: none;
   display: inline-block;
   font-size: 1rem;
-	margin-bottom: 20px;
+  margin-bottom: 20px;
+  margin-right: 20px;
 }
 
 button:hover {
@@ -431,7 +432,16 @@ button:hover {
 .error {
 	color: red;
   }
-
+.show-actions {
+	display: flex;
+	flex-direction: row;
+	justify-content: left;
+	align-items: center;
+	margin-top: 20px;
+	margin-bottom: 50px;
+	margin-left: 30px;
+	font-size: large;
+  }
 @media screen and (min-width: 780px) {
 	.contact-us-show {
 		align-items: center;

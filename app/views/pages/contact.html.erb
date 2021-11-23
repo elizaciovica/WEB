@@ -1,14 +1,19 @@
 <header class="main-header">
-    <nav class="main-nav">
-        <figure class="nav-logo">
-            <a href="#"><%= image_tag("logo2.png", class: "logo inver-color", alt: "logo-image-small") %></a>
-        </figure>
-        <ul>
-            <li><%= link_to root_path do %>Home<% end %></li>
-            <li><a>|</a></li>
-            <li><%= link_to contact_path do %>Contact<% end %></li>
-        </ul>
-    </nav>
+  <nav class="main-nav">
+    <figure class="nav-logo">
+      <a href="#"><%= image_tag("logo2.png", class: "logo inver-color", alt: "logo-image-small") %></a>
+    </figure>
+    <ul>
+      <li><%= link_to root_path do %>Home<% end %></li>
+      <% if current_user %>
+        <li><a>|</a></li>
+        <li><%= link_to destroy_user_session_path, method: :delete do %>Logout<% end %></li>
+      <% else %>
+        <li><a>|</a></li>
+        <li><%= link_to new_user_session_path do %>Login<% end %></li>
+      <% end %>
+    </ul>
+  </nav>
 </header>
 
 <main>

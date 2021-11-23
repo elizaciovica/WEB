@@ -7,6 +7,13 @@
       <li><%= link_to root_path do %>Home<% end %></li>
       <li><a>|</a></li>
       <li><%= link_to contact_path do %>Contact<% end %></li>
+      <% if current_user %>
+        <li><a>|</a></li>
+        <li><%= link_to destroy_user_session_path, method: :delete do %>Logout<% end %></li>
+      <% else %>
+        <li><a>|</a></li>
+        <li><%= link_to new_user_session_path do %>Login<% end %></li>
+      <% end %>
     </ul>
   </nav>
 </header>
@@ -275,6 +282,13 @@
   </section>
 </main>
 
+<% if current_user %>
+  <ul class="show-actions">
+    <li><%= link_to '<button type="button">Back</button>'.html_safe, root_path %></li>
+    <li><%= link_to '<button type="button">Edit</button>'.html_safe, edit_offer_path(@offer) %></li>
+  </ul>  
+<% end %>
+
 <footer class="footer">
   <nav class="footer-nav">
     <ul>
@@ -287,8 +301,4 @@
   </nav>      
 </footer>
 
-<% if current_user %>
-  <%= link_to 'Edit', edit_offer_path(@offer) %> |
-  <%= link_to 'Back', root_path %>
-<% end %>
 <%= javascript_include_tag 'offer'%>

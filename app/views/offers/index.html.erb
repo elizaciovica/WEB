@@ -43,23 +43,11 @@
   </section>
 </main>
 
-<footer class="footer">
-  <nav class="footer-nav">
-    <ul>
-      <li><a href="#"><%= image_tag("fb.png", alt: "facebook-logo", width: "50", height: "50")%></a></li>
-      <li><a href="#"><%= image_tag("insta.png", alt: "instagram-logo", width: "50", height: "50")%></a></li>
-      <li><a href="#"><%= image_tag("twitter.png", alt: "twitter-logo", width: "50", height: "50")%></a></li>
-      <li><a href="#"><%= image_tag("wapp.png", alt: "wapp-logo", width: "50", height: "50")%></a></li>
-      <li id="copyright">Copyright @2021</li>
-    </ul>
-  </nav>       
-</footer>
-
 <% if current_user %>
-  <br><br><br><br><br>
+  <br><br>
   <p id="notice"><%= notice %></p>
 
-  <h1>Offers</h1>
+  <h1>Edit your Offers</h1>
   <br><br>
 
   <table>
@@ -75,7 +63,7 @@
 
     <tbody>
       <% @offers.each do |offer| %>
-        <tr>
+        <tr class="edit">
           <td><%= offer.name %></td>
           <td><%= offer.location %></td>
           <td><%= offer.price %></td>
@@ -87,9 +75,23 @@
       <% end %>
     </tbody>
   </table>
-
-  <br>
-
-  <%= link_to 'New Offer', new_offer_path %>
+  <ul class="new_offer">
+      <li><%= link_to '<button type="button">Add New Offer</button>'.html_safe, new_offer_path %></li>
+      <li><%= link_to '<button type="button">See Users</button>'.html_safe, users_path %></li>
+  </ul>  
 
 <% end %>
+
+
+<footer class="footer">
+  <nav class="footer-nav">
+    <ul>
+      <li><a href="#"><%= image_tag("fb.png", alt: "facebook-logo", width: "50", height: "50")%></a></li>
+      <li><a href="#"><%= image_tag("insta.png", alt: "instagram-logo", width: "50", height: "50")%></a></li>
+      <li><a href="#"><%= image_tag("twitter.png", alt: "twitter-logo", width: "50", height: "50")%></a></li>
+      <li><a href="#"><%= image_tag("wapp.png", alt: "wapp-logo", width: "50", height: "50")%></a></li>
+      <li id="copyright">Copyright @2021</li>
+    </ul>
+  </nav>       
+</footer>
+

@@ -4,14 +4,45 @@ pre {
   font-size: 11px; }
 
 th {
-  padding-bottom: 5px; }
+  padding-bottom: 5px;
+  color: #8a515d; }
 
 td {
   padding: 0 5px 7px; }
 
+h1 {
+  margin-top: 20px;
+  margin-bottom: 30px;
+  text-align: center;
+  color: #8a515d;
+}
+
 div.field,
 div.actions {
-  margin-bottom: 10px; }
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 30px;
+}
+div.actions-button {
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 30px;
+  width: 30%;
+}
+
+label {
+  margin-right: 30px;
+  color: #5c222e;
+  font-weight: bold;
+}
+
+input {
+  width: 50%;
+}
 
 #notice {
   color: green; }
@@ -43,3 +74,9 @@ div.actions {
 
 label {
   display: block; }
+
+  @media screen and (min-width: 900px) {
+    th, td {
+      text-align: left;
+    }
+  }
