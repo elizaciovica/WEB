@@ -43,7 +43,7 @@
   </section>
 </main>
 
-<% if current_user %>
+<% if current_user && current_user.admin? %>
   <br><br>
   <p id="notice"><%= notice %></p>
 
@@ -69,8 +69,8 @@
           <td><%= offer.price %></td>
           <td><%= image_tag(offer.image.variant(resize: "100x100")) %></td>
           <td><%= link_to 'Show', offer %></td>
-          <td><%= link_to 'Edit', edit_offer_path(offer) %></td>
-          <td><%= link_to 'Destroy', offer, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <% if can? :edit, @offer %><td><%= link_to 'Edit', edit_offer_path(offer) %></td><% end %>
+          <% if can? :delete, @offer %><td><%= link_to 'Destroy', offer, method: :delete, data: { confirm: 'Are you sure?' } %></td><% end %>
         </tr>
       <% end %>
     </tbody>

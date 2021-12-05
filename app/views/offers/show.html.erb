@@ -282,7 +282,7 @@
   </section>
 </main>
 
-<% if current_user %>
+<% if current_user && current_user.admin? %>
   <ul class="show-actions">
     <li><%= link_to '<button type="button">Back</button>'.html_safe, root_path %></li>
     <li><%= link_to '<button type="button">Edit</button>'.html_safe, edit_offer_path(@offer) %></li>
