@@ -5,6 +5,7 @@ Rails.application.routes.draw do
     :sign_up => "register"
   }
   get 'contact' => 'pages#contact'
+  get 'country' => 'pages#country'
   resources :offers
   root 'offers#index'
   resources :users

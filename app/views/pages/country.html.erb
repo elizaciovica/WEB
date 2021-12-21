@@ -1,0 +1,260 @@
+<header class="main-header">
+  <nav class="main-nav">
+    <figure class="nav-logo">
+      <a href="#"><%= image_tag("logo2.png", class: "logo inver-color", alt: "logo-image-small") %></a>
+    </figure>
+    <ul>
+      <li><%= link_to root_path do %>Home<% end %></li>
+      <% if current_user %>
+        <li><a>|</a></li>
+        <li><%= link_to destroy_user_session_path, method: :delete do %>Logout<% end %></li>
+      <% else %>
+        <li><a>|</a></li>
+        <li><%= link_to new_user_session_path do %>Login<% end %></li>
+      <% end %>
+    </ul>
+  </nav>
+</header>
+<main class = "country-show">
+    <hr id="horizontal-line">
+    <br><br>
+    <h1>Beautiful Romania</h1>
+    <% if false %>
+    <div class="slideshow-container">
+
+        <div class="mySlides fade">
+            <a href="#"><%= image_tag("slide1.jpg", alt: "logo-image-small") %></a>
+        </div>
+        <div class="mySlides fade">
+            <a href="#"><%= image_tag("slide2.jpg", alt: "logo-image-small") %></a>
+        </div>
+        <div class="mySlides fade">
+            <a href="#"><%= image_tag("slide3.jpg", alt: "logo-image-small") %></a>
+        </div>
+        <div class="mySlides fade">
+            <a href="#"><%= image_tag("slide111.png", alt: "logo-image-small") %></a>
+        </div>
+        <div class="mySlides fade">
+            <a href="#"><%= image_tag("slide11.jpg", alt: "logo-image-small") %></a>
+        </div>
+        <div class="mySlides fade">
+            <a href="#"><%= image_tag("slide6.jpg", alt: "logo-image-small") %></a>
+        </div>
+        <div class="mySlides fade">
+            <a href="#"><%= image_tag("slide4.jpg", alt: "logo-image-small") %></a>
+        </div>
+
+    </div>
+<br>
+
+<div class="dots">
+  <span class="dot"></span> 
+  <span class="dot"></span> 
+  <span class="dot"></span>
+  <span class="dot"></span> 
+  <span class="dot"></span> 
+  <span class="dot"></span> 
+  <span class="dot"></span>  
+</div>
+
+<script>
+var slideIndex = 0;
+showSlides();
+
+function showSlides() {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";  
+  }
+  slideIndex++;
+  if (slideIndex > slides.length) {slideIndex = 1}    
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+  setTimeout(showSlides, 2000); // Change image every 2 seconds
+}
+</script>
+<% end %>
+
+<div class="max-container">
+  <div class="column">
+    <div class="text-block">
+      <h4>Peleș Castle</h4>
+      <p>Carpathian Mountains, near Sinaia, in Prahova County, Romania</p>
+    </div>
+    <a href="#"><%= image_tag("slide3.jpg", alt: "logo-image-small") %></a>
+    <br><br><br><br>
+
+    <div class="text-block">
+      <h4>The Sphinx</h4>
+      <p>Natural rock formation in the Bucegi Natural Park</p>
+    </div>
+    <a href="#"><%= image_tag("slide2.jpg", alt: "logo-image-small") %></a>
+    <br><br><br><br>
+
+    <div class="text-block">
+      <h4>Danube Delta</h4>
+      <p>The second largest river delta in Europe</p>
+    </div>
+    <a href="#"><%= image_tag("slide1.jpg", alt: "logo-image-small") %></a>
+    <br><br><br><br>
+
+    <div class="text-block">
+      <h4>Vidra Lake</h4>
+      <p>In the Parâng Mountains group</p>
+    </div>
+    <a href="#"><%= image_tag("slide11.jpg", alt: "logo-image-small") %></a>
+    <br><br><br><br>
+
+    <div class="text-block">
+      <h4>Mocăniţa Steam Traine</h4>
+      <p>Vaser Valley, Maramures</p>
+    </div>
+    <a href="#"><%= image_tag("slide111.png", alt: "logo-image-small") %></a>
+    <br><br><br><br>
+
+    <div class="text-block">
+      <h4>Sibiu Christmas Market</h4>
+      <p>This Transylvanian winter celebration is known as The Christmas Fair in Sibiu</p>
+    </div>
+    <a href="#"><%= image_tag("slide6.jpg", alt: "logo-image-small") %></a>
+    <br><br><br><br>
+
+    <div class="text-block">
+      <h4>Palace of Culture</h4>
+      <p> An edifice located in Iași, Romania</p>
+    </div>
+    <a href="#"><%= image_tag("slide4.jpg", alt: "logo-image-small") %></a>
+    <br><br><br><br>
+
+    <div class="text-block">
+      <h4>Fairies' Fortress</h4>
+      <p>The fairy tale clay castle in Porumbacu de Sus</p>
+    </div>
+    <a href="#"><%= image_tag("slide13.jpg", alt: "logo-image-small") %></a>
+    <br><br><br><br>
+
+    <div class="text-block">
+      <h4>Rupea Citadel</h4>
+      <p>It is situated on a 120 m high basalt cliff, to the west of the Transylvanian town of Rupea</p>
+    </div>
+    <a href="#"><%= image_tag("slide0.jpg", alt: "logo-image-small") %></a>
+    <br><br><br><br>
+
+    <div class="text-block">
+      <h4>Scenic Transfagarasan Road</h4>
+      <p>It has 90 kilometers, tunnels, viaducts, bridges, and breathtaking landscapes</p>
+    </div>
+    <a href="#"><%= image_tag("slide14.jpg", alt: "logo-image-small") %></a>
+    <br><br><br><br>
+
+    <div class="text-block">
+      <h4>Cantacuzino Castle</h4>
+      <p>Located in the Bușteni mountain resort</p>
+    </div>
+    <a href="#"><%= image_tag("slide17.jpg", alt: "logo-image-small") %></a>
+    <br><br><br><br>
+
+    <div class="text-block">
+      <h4>Măgura village</h4>
+      <p>In Piatra Craiului Mountains, Măgura village is situated at 1000 meters</p>
+    </div>
+    <a href="#"><%= image_tag("slide18.jpg", alt: "logo-image-small") %></a>
+  
+
+  </div>
+
+
+  <div class="column">
+    <div class="text-block">
+      <h4>Sarmizegetusa Regia</h4>
+      <p>Dacian Fortresses of the Orăștie Mountains</p>
+    </div>
+    <a href="#"><%= image_tag("offer5.jpg", alt: "logo-image-small") %></a>
+    <br><br><br><br>
+
+    <div class="text-block">
+      <h4>The Red Ravine</h4>
+      <p>Canyon located in Transylvania</p>
+    </div>
+    <a href="#"><%= image_tag("slide5.jpg", alt: "logo-image-small") %></a>
+    <br><br><br><br>
+
+    <div class="text-block">
+      <h4>Ochiul Beiului Lake</h4>
+      <p>In the village of Sasca Montana, in Caras-Severin County</p>
+    </div>
+    <a href="#"><%= image_tag("slide7.jpg", alt: "logo-image-small") %></a>
+    <br><br><br><br>
+
+    <div class="text-block">
+      <h4>Neamtului Fortress</h4>
+      <p>Located near the highest point of the Plesului Peak</p>
+    </div>
+    <a href="#"><%= image_tag("slide8.jpg", alt: "logo-image-small") %></a>
+    <br><br><br><br>
+
+    <div class="text-block">
+      <h4>The Merry Cemetery</h4>
+      <p>In the village of Săpânța, Maramureş county</p>
+    </div>
+    <a href="#"><%= image_tag("slide9.jpg", alt: "logo-image-small") %></a>
+    <br><br><br><br>
+
+    <div class="text-block">
+      <h4>Bran Castle</h4>
+      <p>In Bran, 25 kilometres southwest of Brașov</p>
+    </div>
+    <a href="#"><%= image_tag("offer1.jpg", alt: "logo-image-small") %></a>
+    <br><br><br><br>
+
+    <div class="text-block">
+      <h4>Sighișoara</h4>
+      <p>A city on the Târnava Mare River in Mureș County</p>
+    </div>
+    <a href="#"><%= image_tag("offer4.jpg", alt: "logo-image-small") %></a>
+    <br><br><br><br>
+
+    <div class="text-block">
+      <h4>Constanța Casino</h4>
+      <p>Is a defunct casino, located in Constanța, Romania</p>
+    </div>
+    <a href="#"><%= image_tag("slide12.jpg", alt: "logo-image-small") %></a>
+    <br><br><br><br>
+
+    <div class="text-block">
+      <h4>Snagov Monastery</h4>
+      <p>On a tiny island in a lake just outside of Bucharest</p>
+    </div>
+    <a href="#"><%= image_tag("slide10.jpg", alt: "logo-image-small") %></a>
+    <br><br><br><br>
+
+    <div class="text-block">
+      <h4>Europe’s Last Virgin Forests</h4>
+      <p>In the Carpathian Mountains</p>
+    </div>
+    <a href="#"><%= image_tag("slide15.jpg", alt: "logo-image-small") %></a>
+    <br><br><br><br>
+
+    <div class="text-block">
+      <h4>Europe’s Tallest Sculpted Rock</h4>
+      <p>It represents King Decebal, the last ruler of Dacia</p>
+    </div>
+    <a href="#"><%= image_tag("slide16.jpg", alt: "logo-image-small") %></a>
+    <br><br><br><br>
+
+    <div class="text-block">
+      <h4>The Horses Waterfall</h4>
+      <p>Located in Maramures region, near the National Park of Rodnei Mountains</p>
+    </div>
+    <a href="#"><%= image_tag("slide19.png", alt: "logo-image-small") %></a>
+
+  </div>
+
+</div>
+
+</main>
